@@ -44,6 +44,7 @@ main {
   justify-content: center;
   align-items: center;
   min-height: 100vh;
+  font-family: "Hanken Grotesk", sans-serif;
 }
 
 .container {
