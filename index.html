@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Results summary component</title>
+    <link
+      rel="stylesheet"
+      href="style.css"
+    />
+  </head>
+  <body>
+    <main>
+      <div class="container">
+        <section class="result">
+          <h5>Your Result</h5>
+          <div class="progress">
+            <h4>76</h4>
+            <h6>of 100</h6>
+          </div>
+          <h3>Great</h3>
+          <p>
+            You scored higher than 65% of the people who have taken these tests.
+          </p>
+        </section>
+
+        <section class="summary">
+          <h4>Summary</h4>
+
+          <div class="summary__container">
+            <div class="summary__item summary__item--danger">
+              <div class="icon">
+                <img
+                  src="./images/icon-reaction.svg"
+                  alt=""
+                />
+                <h6>Reaction</h6>
+              </div>
+              <div class="report">
+                <strong>80</strong> <span class="text-muted">/</span>
+                <span class="text-muted">100</span>
+              </div>
+            </div>
+
+            <div class="summary__item summary__item--warning">
+              <div class="icon">
+                <img
+                  src="./images/icon-memory.svg"
+                  alt=""
+                />
+                <h6>Memory</h6>
+              </div>
+              <div class="report">
+                <strong>80</strong> <span class="text-muted">/</span>
+                <span class="text-muted">100</span>
+              </div>
+            </div>
+
+            <div class="summary__item summary__item--success">
+              <div class="icon">
+                <img
+                  src="./images/icon-verbal.svg"
+                  alt=""
+                />
+                <h6>Verbal</h6>
+              </div>
+              <div class="report">
+                <strong>80</strong> <span class="text-muted">/</span>
+                <span class="text-muted">100</span>
+              </div>
+            </div>
+
+            <div class="summary__item summary__item--info">
+              <div class="icon">
+                <img
+                  src="./images/icon-visual.svg"
+                  alt=""
+                />
+                <h6>Visual</h6>
+              </div>
+              <div class="report">
+                <strong>80</strong> <span class="text-muted">/</span>
+                <span class="text-muted">100</span>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn btn--grey">Continue</button>
+        </section>
+      </div>
+    </main>
+
+    <div class="attribution">
+      Challenge by
+      <a
+        href="https://www.frontendmentor.io?ref=challenge"
+        target="_blank"
+        >Frontend Mentor</a
+      >. Coded by <a href="https://github.com/arbabhsiddiqui">Arbab Hussain</a>.
+    </div>
+  </body>
+</html>

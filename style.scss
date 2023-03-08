@@ -1,0 +1,248 @@
+@use 'sass:math';
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --primary: hsl(241, 81%, 54%);
+  --primary-dark: #000;
+  --primary-light: #000;
+  --base: #000;
+  --base-dark: #000;
+  --base-light: #000;
+  --secondary: #1da68f;
+  --secondary-dark: #000;
+  --secondary-light: #000;
+  --accent: #000;
+  --accent-dark: #000;
+  --accent-light: #000;
+  --danger: hsl(0, 100%, 67%);
+  --warning: hsl(39, 100%, 56%);
+  --success: hsl(166, 100%, 37%);
+  --info: hsl(234, 85%, 45%);
+  --text-dark: #000;
+  --text-light: #fff;
+  --text-muted: hsl(241, 100%, 89%);
+
+  --grey: hsl(224, 30%, 27%);
+  --gradient1: linear-gradient(180deg, hsl(252, 100%, 67%), hsl(241, 81%, 54%));
+  --gradient2: linear-gradient(
+    180deg,
+    hsla(256, 72%, 46%, 1),
+    hsla(241, 72%, 46%, 0)
+  );
+}
+
+$breakpoints-up: (
+  'small': '23.438em',
+  'medium': '48em',
+  'large': '64em',
+  'xLarge': '90em',
+);
+
+@mixin breakpoint($size) {
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}
+
+@function rem($pixels, $context: 16) {
+  @return (math.div($pixels, $context)) * 1rem;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.text-muted {
+  color: hsla(224, 30%, 27%, 0.626);
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  margin: 0 !important;
+  padding: 0 !important;
+  @include breakpoint(large) {
+    justify-content: center;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 1000px;
+    box-shadow: 10px 10px 10px -5px rgba(0, 0, 0, 0.06);
+    border-radius: rem(25);
+  }
+}
+
+.btn {
+  display: block;
+  margin-block: rem(20);
+  background: red;
+  width: 100%;
+  padding: 1rem;
+  border-radius: rem(25);
+  border: 1px solid transparent;
+
+  &--grey {
+    background: var(--grey);
+    color: var(--white);
+  }
+}
+.result {
+  background: var(--gradient1);
+  color: var(--white);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 0px 0px rem(25) rem(25);
+  padding: 1rem;
+
+  @include breakpoint(large) {
+    flex-grow: 1;
+    border-radius: rem(25);
+    flex-basis: 300px;
+  }
+
+  h5 {
+    font-size: rem(18);
+    color: var(--text-muted);
+  }
+
+  .progress {
+    margin-block: rem(20);
+    background: var(--gradient2);
+    padding: 1rem;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: rem(150);
+    width: rem(150);
+
+    h4 {
+      font-size: rem(60);
+      font-weight: 800;
+    }
+    h6 {
+      font-size: rem(18);
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+  }
+
+  h3 {
+    font-size: rem(25);
+    padding-bottom: rem(15);
+  }
+
+  p {
+    color: var(--text-muted);
+    width: 80%;
+    padding-bottom: rem(20);
+    text-align: center;
+  }
+}
+
+.summary {
+  padding: 1rem;
+
+  @include breakpoint(large) {
+    flex-basis: 400px;
+    padding: 2rem;
+
+    h4 {
+      font-size: rem(25);
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: rem(25);
+    width: 100%;
+    margin-top: rem(20);
+  }
+
+  &__item {
+    width: inherit;
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-radius: rem(5);
+
+    .icon {
+      display: flex;
+      align-items: center;
+      gap: rem(10);
+
+      h6 {
+        font-size: rem(16);
+      }
+    }
+
+    .report {
+      color: var(--grey);
+    }
+
+    &--danger {
+      background: hsla(0, 100%, 67%, 0.146);
+
+      .icon {
+        h6 {
+          color: var(--danger);
+        }
+      }
+    }
+
+    &--warning {
+      background: hsla(39, 100%, 56%, 0.132);
+
+      .icon {
+        h6 {
+          color: var(--warning);
+        }
+      }
+    }
+
+    &--success {
+      background: hsla(166, 100%, 37%, 0.119);
+
+      .icon {
+        h6 {
+          color: var(--success);
+        }
+      }
+    }
+
+    &--info {
+      background: hsla(234, 85%, 45%, 0.203);
+
+      .icon {
+        h6 {
+          color: var(--info);
+        }
+      }
+    }
+  }
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
